@@ -1,0 +1,48 @@
+openapi: '3.0.2'
+info:
+  title: Pet API
+  version: '1.0'
+servers:
+  - url: https://dev.sample-server.com/v1
+    description: Development server
+  - url: https://stg.sample-server.com/v1
+    description: Staging server
+  - url: https://api.sample-server.com/v1
+    description: Production server
+paths:
+  /pets/{petId}:
+    get:
+      tags:
+        - pet
+      summary: Find pet by ID
+      description: Returns a single pet
+      operationId: getPetById
+      parameters:
+        - name: petId
+          in: path
+          description: ID of pet to return
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Pet not found
+components:
+  schemas:
+    Pet:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
