@@ -136,7 +136,7 @@ SwaggerEditorのOpenAPI仕様を図示します。
 |object|||
 |array|||
 
-上記の型を使用してAPI仕様を定義します。
+上記の型を使用してAPI仕様を定義します。  
 ドキュメント: [Data Type](https://spec.openapis.org/oas/latest.html#data-types)
 
 ## `paths`セクション
@@ -180,14 +180,106 @@ paths:
     - `header `: 期待するカスタムヘッダー。ヘッダー名は大文字小文字を区別しないルールとなっています。
     - `cookie`: APIに特定の`cookie`値を渡すための設定。
 - `requestBody`: リクエストボディからパラメータを受け取る場合に、以下のような形式で定義。
+
     ```yml
     requestBody:
       description: Update an existent pet in the store
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Pet"
+            $ref: '#/components/schemas/Pet'
       required: true
     ```
 
 ドキュメント: [Paths Object](https://spec.openapis.org/oas/latest.html#paths-object)
+
+## `components`セクション
+API定義をコンポーネント化し、再利用することで一貫性を保ち、効率的にAPI仕様を定義できます。  
+以下のように、様々な種類のAPI定義をコンポーネント化できます。  
+使用頻度の高そうな、`schemas`、`securitySchemes`について説明します。
+
+```yml
+components:
+  schemas:
+  responses:
+  parameters:
+  examples:
+  requestBodies:
+  headers:
+  securitySchemes:
+  links:
+  callbacks:
+  pathItems:
+```
+
+### `schemas`
+以下は、注文スキーマを定義しています。  
+スキーマ自体のデータ型を指定し、各プロパティのデータ型とサンプル値を定義しています。  
+注文スキーマを定義することで、注文に関する各エンドポイントのパラメータやレスポンス形式の定義で使い回すことができます。
+
+```yml
+schemas:
+  Order:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 10
+      petId:
+        type: integer
+        format: int64
+        example: 198772
+      quantity:
+        type: integer
+        format: int32
+        example: 7
+      shipDate:
+        type: string
+        format: date-time
+      status:
+        type: string
+        description: Order Status
+        example: approved
+        enum:
+          - placed
+          - approved
+          - delivered
+      complete:
+        type: boolean
+```
+
+ドキュメント: [Schema Object](https://spec.openapis.org/oas/latest.html#schema-object)
+
+### `securitySchemes`
+APIの認証方式の定義をコンポーネント化します。  
+以下のような様々な認証方式をサポートしています。
+
+- Basic認証
+- API Key認証
+- JWT Bearer認証
+- OAuth2.0
+- OpenIDConnect
+
+```yml
+components:
+  securitySchemes:
+    jwt:
+      type: http
+      description: 'JWT認証'
+      scheme: bearer
+      bearerFormat: JWT
+    apikey:
+      type: apiKey
+      description: 'API KEY認証'
+      in: header
+      name: x-api-key
+```
+
+ドキュメント: [Security Scheme Object](https://spec.openapis.org/oas/latest.html#securitySchemeObject)
+
+## まとめ
+- `paths`で各エンドポイントの仕様を定義。
+- `components`でAPI仕様をコンポーネント化し、再利用することで一貫性を保ち、効率的にAPI設計できる。
+
+

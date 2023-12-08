@@ -45,14 +45,14 @@ paths:
 
 |項目|必須|説明|
 |--|--|--|
-|openapi|YES|セマンティックなバージョニングを記述。今回は`3.0.2`を用いる。詳しくは[ドキュメント](https://spec.openapis.org/oas/latest.html#openapi-object)を参照。|
-|info|YES|APIのメタデータを記述。|
-|servers||APIを提供するサーバーを記述。配列で複数記述可能(STG, PROD等)。|
-|paths|YES|APIで利用可能なエンドポイントやメソッドを記述。|
-|components||APIで使用するオブジェクトスキーマを記述。|
-|security||API全体を通して使用可能なセキュリティ仕様を記述。(OAuth等)|
-|tags||APIで使用されるタグのリスト。各種ツールによってパースされる際は、記述された順序で出力される。タグ名はユニークで無ければならない。|
-|externalDocs||外部ドキュメントを記述(API仕様書等)。|
+|`openapi`|YES|セマンティックなバージョニングを記述。今回は`3.0.2`を用いる。詳しくは[ドキュメント](https://spec.openapis.org/oas/latest.html#openapi-object)を参照。|
+|`info`|YES|APIのメタデータを記述。|
+|`servers`||APIを提供するサーバーを記述。配列で複数記述可能(STG, PROD等)。|
+|`paths`|YES|APIで利用可能なエンドポイントやメソッドを記述。|
+|`components`||APIで使用するオブジェクトスキーマを記述。|
+|`security`||API全体を通して使用可能なセキュリティ仕様を記述。(OAuth等)|
+|`tags`||APIで使用されるタグのリスト。各種ツールによってパースされる際は、記述された順序で出力される。タグ名はユニークで無ければならない。|
+|`externalDocs`||外部ドキュメントを記述(API仕様書等)。|
 
 ## 項目詳細
 ### info
@@ -75,12 +75,12 @@ info:
 
 |項目|必須|説明|
 |--|--|--|
-|title|YES|APIの名称。|
-|description||APIの簡潔な説明。[CommonMarkシンタックス](https://spec.commonmark.org/)が使える。|
-|termsOfService||APIの利用規約。URL形式でなければならない。|
-|contact||コンタクト情報。(サポートページのURLやメールアドレス等)|
-|license||ライセンス情報。ライセンスページのURLも記述可能。|
-|version|YES|APIドキュメントのバージョン。|
+|`title`|YES|APIの名称。|
+|`description`||APIの簡潔な説明。[CommonMarkシンタックス](https://spec.commonmark.org/)が使える。|
+|`termsOfService`||APIの利用規約。URL形式でなければならない。|
+|`contact`||コンタクト情報。(サポートページのURLやメールアドレス等)|
+|`license`||ライセンス情報。ライセンスページのURLも記述可能。|
+|`version`|YES|APIドキュメントのバージョン。|
 
 ### servers
 ドキュメント: [Server Object](https://spec.openapis.org/oas/latest.html#server-object)
@@ -97,8 +97,8 @@ servers:
 
 |項目|必須|説明|
 |--|--|--|
-|url|YES|APIのベースURL。|
-|description||APIサーバーの説明。|
+|`url`|YES|APIのベースURL。|
+|`description`||APIサーバーの説明。|
 
 ### paths
 ドキュメント: [Paths Object](https://spec.openapis.org/oas/latest.html#paths-object)
@@ -127,7 +127,7 @@ paths:
 #### `paths`オブジェクト
 |項目|説明|
 |--|--|
-|/{path}|各エンドポイントのパスを記述。`servers`で定義したURLにこのパスを結合したものが最終的なエンドポイントとなる。|
+|`/{path}`|各エンドポイントのパスを記述。`servers`で定義したURLにこのパスを結合したものが最終的なエンドポイントとなる。|
 
 #### `path item`オブジェクト
 |項目|説明|
@@ -184,9 +184,9 @@ security:
 
 |項目|必須|説明|
 |--|--|--|
-|name|YES|タグ名称。|
-|description||タグの説明。|
-|externalDocs||外部ドキュメント|
+|`name`|YES|タグ名称。|
+|`description`||タグの説明。|
+|`externalDocs`||外部ドキュメント|
 
 ### externalDocs
 ドキュメント: [External Documentation Object](https://spec.openapis.org/oas/latest.html#external-documentation-object)
@@ -198,8 +198,8 @@ url: https://example.com
 
 |項目|必須|説明|
 |--|--|--|
-|description||外部ドキュメントの説明。|
-|url|YES|外部ドキュメントのURL。|
+|`description`||外部ドキュメントの説明。|
+|`url`|YES|外部ドキュメントのURL。|
 
 ## 環境構築
 1. [https://code.visualstudio.com/](https://code.visualstudio.com/) から環境に合ったVSCodeのインストーラーをダウンロードします。
