@@ -1,6 +1,6 @@
-# learn-open-api
+# 始めに、OpenAPIに入門する
 
-- [learn-open-api](#learn-open-api)
+- [始めに、OpenAPIに入門する](#始めにopenapiに入門する)
   - [OpenAPIとは](#openapiとは)
   - [主機能](#主機能)
   - [記述形式](#記述形式)
@@ -15,6 +15,7 @@
     - [security](#security)
     - [tags](#tags)
     - [externalDocs](#externaldocs)
+    - [まとめ](#まとめ)
   - [環境構築](#環境構築)
 
 ## OpenAPIとは
@@ -199,6 +200,14 @@ url: https://example.com
 |--|--|--|
 |`description`||外部ドキュメントの説明。|
 |`url`|YES|外部ドキュメントのURL。|
+
+### まとめ
+以上、OpenAPIの基本的な部分を紹介しました。  
+OpenAPIは`Swagger 2.0`をベースにしていますが、記法が異なる部分が多いため、公式ドキュメントをしっかり読み込んで行く必要があります。  
+手軽にRESTful APIの定義ができるうえ、`Amazon API Gateway`と連携し定義のインポート/エクスポートが出来たりと非常に便利なため、積極的に利用していきたいです。  
+
+[GETTING_STARTED.md](GETTING_STARTED.md) では実際にサンプルを作りながらOpenAPI仕様を学習できます。
+
 
 ## 環境構築
 1. [https://code.visualstudio.com/](https://code.visualstudio.com/) から環境に合ったVSCodeのインストーラーをダウンロードします。

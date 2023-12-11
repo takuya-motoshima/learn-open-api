@@ -1,6 +1,6 @@
-# OpenAPI入門
+# OpenAPIを使ってみる
 
-- [OpenAPI入門](#openapi入門)
+- [OpenAPIを使ってみる](#openapiを使ってみる)
   - [OpenAPIのサンプル](#openapiのサンプル)
   - [OpenAPI仕様の概要](#openapi仕様の概要)
   - [OpenAPIが扱えるデータ型](#openapiが扱えるデータ型)
@@ -9,7 +9,7 @@
     - [`schemas`](#schemas)
     - [`securitySchemes`](#securityschemes)
   - [まとめ](#まとめ)
-  - [OpenAPI仕様書の可視化](#openapi仕様書の可視化)
+  - [OpenAPI仕様書を可視化する](#openapi仕様書を可視化する)
 
 このセクションではOpenAPIの基礎を学び、次の状態を目指します。
 - OpenAPIの登場人物がわかる
@@ -289,11 +289,13 @@ components:
 ドキュメント: [Security Scheme Object](https://spec.openapis.org/oas/latest.html#securitySchemeObject)
 
 ## まとめ
+- OpenAPI仕様は `JSON` または `YAML` 形式で記述。  
 - `paths`で各エンドポイントの仕様を定義。
 - `components`でAPI仕様をコンポーネント化し、再利用することで一貫性を保ち、効率的にAPI設計できる。
 
-## OpenAPI仕様書の可視化
-`Swagger UI`を使用して、コードベースのJSONやYAML形式の仕様書からHTMLを生成しWEB上で閲覧できるようにします。   
+## OpenAPI仕様書を可視化する
+`Swagger UI`を使用して、コードベースの `JSON` や `YAML` 形式の仕様書からHTMLを生成しWeb上で閲覧できるようにします。  
+
 `Swagger UI`とは「OpenAPI Specificatioinに従って記述されたAPI仕様書をWebページ上で見やすく表示するツール」です。  
 `Swagger Editor`, `Swagger Codegen` とともによく使われるツールになります。
 
@@ -305,6 +307,7 @@ components:
 1. プロジェクトのルートにOpenAPI仕様書の`yaml`ファイルを作成し、APIの定義を記述します。ファイル名は`sample.yml`とします。
 1. `index.html`ファイルを作成し、次のコードを記述します。   
     `SwaggerUIBundle`に渡されるオプション `url` を書き換えることで初期表示を切り替えることができます。
+
     ```html
     <!DOCTYPE html>
     <html>
