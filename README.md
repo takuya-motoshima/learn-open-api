@@ -16,7 +16,6 @@
     - [tags](#tags)
     - [externalDocs](#externaldocs)
   - [環境構築](#環境構築)
-  - [参考](#参考)
 
 ## OpenAPIとは
 Web サービスを記述、生成、利用、視覚化するための機械可読インターフェイス定義言語の仕様。
@@ -209,9 +208,3 @@ url: https://example.com
     |--|--|
     |`OpenAPI(Swagger) Editor`|OpenAPI定義ファイルの新規作成、ナビゲーション、参照へのジャンプ、インテリセンス、プレビュー（`Shift+Alt+P`）などができます。|
     |`OpenApi Snippets`|OpenAPIのコード補完機能です。|
- 
-## 参考
-- [OpenAPIに入門する](https://zenn.dev/mizu4ma/articles/3c29f05ab82739)
-- [OpenAPIとは｜Swaggerとの違いや役立つツールを紹介 | AeyeScanメディア](https://www.aeyescan.jp/media/openapi)
-- [OpenAPI (Swagger) 超入門 #入門 - Qiita](https://qiita.com/teinen_qiita/items/e440ca7b1b52ec918f1b)
-- [OpenAPI仕様 Version 3.1.0（YAML版）](https://zenn.dev/robon/articles/518f1f4769301f)

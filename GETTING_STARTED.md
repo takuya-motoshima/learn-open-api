@@ -1,5 +1,15 @@
 # OpenAPI入門
-<!-- 参考:https://zenn.dev/mizu4ma/articles/3c29f05ab82739-->
+
+- [OpenAPI入門](#openapi入門)
+  - [OpenAPIのサンプル](#openapiのサンプル)
+  - [OpenAPI仕様の概要](#openapi仕様の概要)
+  - [OpenAPIが扱えるデータ型](#openapiが扱えるデータ型)
+  - [`paths`セクション](#pathsセクション)
+  - [`components`セクション](#componentsセクション)
+    - [`schemas`](#schemas)
+    - [`securitySchemes`](#securityschemes)
+  - [まとめ](#まとめ)
+  - [OpenAPI仕様書の可視化](#openapi仕様書の可視化)
 
 このセクションではOpenAPIの基礎を学び、次の状態を目指します。
 - OpenAPIの登場人物がわかる
@@ -66,7 +76,7 @@ components:
           type: string
 ```
 
-<!-- サンプルのOpenAPI仕様の説明です。[]で括られた key はプレースホルダー、value は key の説明です。
+サンプルのOpenAPI仕様の説明です。[]で括られた key はプレースホルダー、value は key の説明です。
 ```yml
 openapi: OpenAPI仕様バージョン
 info:
@@ -106,7 +116,7 @@ components:
       properties:
         [プロパティ名]:
           type: データ型
-``` -->
+```
 
 ## OpenAPI仕様の概要
 以下の公開されているSwaggerEditorにアクセスすると、OpenAPI仕様の全体像がわかります。  
@@ -282,4 +292,53 @@ components:
 - `paths`で各エンドポイントの仕様を定義。
 - `components`でAPI仕様をコンポーネント化し、再利用することで一貫性を保ち、効率的にAPI設計できる。
 
+## OpenAPI仕様書の可視化
+`Swagger UI`を使用して、コードベースのJSONやYAML形式の仕様書からHTMLを生成しWEB上で閲覧できるようにします。   
+`Swagger UI`とは「OpenAPI Specificatioinに従って記述されたAPI仕様書をWebページ上で見やすく表示するツール」です。  
+`Swagger Editor`, `Swagger Codegen` とともによく使われるツールになります。
 
+
+1. プロジェクトフォルダに移動し、次のコマンドを実行して`swagger-ui`をインストールします。
+    ```sh
+    npm install swagger-ui-dist
+    ```
+1. プロジェクトのルートにOpenAPI仕様書の`yaml`ファイルを作成し、APIの定義を記述します。ファイル名は`sample.yml`とします。
+1. `index.html`ファイルを作成し、次のコードを記述します。   
+    `SwaggerUIBundle`に渡されるオプション `url` を書き換えることで初期表示を切り替えることができます。
+    ```html
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Sampla API</title>
+        <link rel="stylesheet" type="text/css" href="node_modules/swagger-ui-dist/swagger-ui.css">
+        <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-16x16.png" sizes="16x16">
+      </head>
+      <body>
+        <div id="swagger-ui"></div>
+        <script src="node_modules/swagger-ui-dist/swagger-ui-bundle.js"></script>
+        <script src="node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+        <script>
+          window.onload = function() {
+            window.ui = SwaggerUIBundle({
+              url: 'sample.yml',
+              dom_id: '#swagger-ui',
+              deepLinking: true,
+              presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+              ],
+              plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+              ],
+              // layout: 'StandaloneLayout',
+              layout: 'BaseLayout',
+            });
+          }
+        </script>
+      </body>
+    </html>
+    ```
+1. ブラウザで`index.html`を開くと、`Swagger UI`が呼び出されOpenAPI仕様書が表示されます。
+
+    ![sample-api.jpg](screencaps/sample-api.jpg)
