@@ -119,10 +119,10 @@ components:
 ```
 
 ## OpenAPI仕様の概要
-以下の公開されているSwaggerEditorにアクセスすると、OpenAPI仕様の全体像がわかります。  
+以下の公開されている`Swagger Editor`にアクセスすると、OpenAPI仕様の全体像がわかります。  
 ドキュメント: [Swagger Editor](https://editor.swagger.io/)
 
-SwaggerEditorのOpenAPI仕様を図示します。
+`Swagger Editor`のOpenAPI仕様を図示します。
 枠の重なりは、同じ構造の繰り返しを意味します。
 
 ![openapi-specification.svg](screencaps/openapi-specification.svg)
