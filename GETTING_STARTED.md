@@ -26,10 +26,10 @@
    
 この仕様をOpenAPI仕様で定義すると以下のようになります。
 ```yml
-openapi: '3.0.2'
+openapi: 3.0.2
 info:
   title: Pet API
-  version: '1.0'
+  version: '1.0.0'
 servers:
   - url: https://dev.sample-server.com/v1
     description: Development server
@@ -46,12 +46,12 @@ paths:
       description: Returns a single pet
       operationId: getPetById
       parameters:
-        - name: petId
-          in: path
-          description: ID of pet to return
+        - in: path
+          name: petId
           required: true
           schema:
             type: integer
+          description: ID of pet to return
       responses:
         '200':
           description: successful operation
@@ -94,12 +94,12 @@ paths:
       description: エンドポイント説明
       operationId: エンドポイントID
       parameters:
-        - name: パラメータ名称
-          in: path|query|header|cookie
-          description: パラメータ説明
+        - in: path|query|header|cookie
+          name: パラメータ名称
           required: true|false
           schema:
             type: データ型
+          description: パラメータ説明
       responses:
         [HTTPステータスコード]:
           description: レスポンス説明
@@ -167,12 +167,12 @@ paths:
       description: エンドポイント説明
       operationId: エンドポイントID
       parameters:
-        - name: パラメータ名称
-          in: path|query|header|cookie
-          description: パラメータ説明
+        - in: path|query|header|cookie
+          name: パラメータ名称
           required: true|false
           schema:
             type: データ型
+          description: パラメータ説明
       responses:
         [HTTPステータスコード]:
           description: レスポンス説明
@@ -276,14 +276,14 @@ components:
   securitySchemes:
     jwt:
       type: http
-      description: 'JWT認証'
       scheme: bearer
       bearerFormat: JWT
-    apikey:
+      description: JWT認証
+    ApiKeyAuth:
       type: apiKey
-      description: 'API KEY認証'
       in: header
-      name: x-api-key
+      name: X-API-KEY
+      description: API KEY認証
 ```
 
 ドキュメント: [Security Scheme Object](https://spec.openapis.org/oas/latest.html#securitySchemeObject)
@@ -311,37 +311,43 @@ components:
     ```html
     <!DOCTYPE html>
     <html>
-      <head>
-        <title>Sampla API</title>
-        <link rel="stylesheet" type="text/css" href="node_modules/swagger-ui-dist/swagger-ui.css">
-        <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-16x16.png" sizes="16x16">
-      </head>
-      <body>
-        <div id="swagger-ui"></div>
-        <script src="node_modules/swagger-ui-dist/swagger-ui-bundle.js"></script>
-        <script src="node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
-        <script>
-          window.onload = function() {
-            window.ui = SwaggerUIBundle({
-              url: 'sample.yml',
-              dom_id: '#swagger-ui',
-              deepLinking: true,
-              presets: [
-                SwaggerUIBundle.presets.apis,
-                SwaggerUIStandalonePreset
-              ],
-              plugins: [
-                SwaggerUIBundle.plugins.DownloadUrl
-              ],
-              // layout: 'StandaloneLayout',
-              layout: 'BaseLayout',
-            });
-          }
-        </script>
-      </body>
+    <head>
+      <title>Sampla API</title>
+      <link rel="stylesheet" type="text/css" href="node_modules/swagger-ui-dist/swagger-ui.css">
+      <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-32x32.png" sizes="32x32">
+      <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-16x16.png" sizes="16x16">
+    </head>
+    <body>
+      <div id="swagger-ui"></div>
+      <script src="node_modules/swagger-ui-dist/swagger-ui-bundle.js"></script>
+      <script src="node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+      <script>
+        window.onload = function() {
+          window.ui = SwaggerUIBundle({
+            url: 'sample.yml',
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            presets: [
+              SwaggerUIBundle.presets.apis,
+              SwaggerUIStandalonePreset
+            ],
+            plugins: [
+              SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: 'BaseLayout',
+            // layout: 'StandaloneLayout',
+
+            // 試行を許可するHTTPメソッド。
+            // supportedSubmitMethods: [],
+            // supportedSubmitMethods: ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'],
+          });
+        }
+      </script>
+    </body>
     </html>
     ```
 1. ブラウザで`index.html`を開くと、`Swagger UI`が呼び出されOpenAPI仕様書が表示されます。
 
     ![sample-api.jpg](screencaps/sample-api.jpg)
+
+    <!-- 実際のサンプルはこちらで確認できます。   -->

@@ -34,7 +34,7 @@ Web サービスを記述、生成、利用、視覚化するための機械可�
 本ドキュメントでは、YAML形式で記述。
 
 ```yml
-openapi: '3.0.2'
+openapi: 3.0.2
 info:
   ...
 servers:
@@ -70,7 +70,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.0
+  version: '1.0.0'
 ```
 
 |項目|必須|説明|

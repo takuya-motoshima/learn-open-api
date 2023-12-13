@@ -1,14 +1,14 @@
-openapi: '3.0.2'
+openapi: 3.0.2
 info:
   title: Pet API
-  version: '1.0'
-# servers:
-#   - url: https://dev.sample-server.com/v1
-#     description: Development server
-#   - url: https://stg.sample-server.com/v1
-#     description: Staging server
-#   - url: https://api.sample-server.com/v1
-#     description: Production server
+  version: '1.0.0'
+servers:
+  - url: https://dev.sample-server.com/v1
+    description: Development server
+  - url: https://stg.sample-server.com/v1
+    description: Staging server
+  - url: https://api.sample-server.com/v1
+    description: Production server
 paths:
   /pets/{petId}:
     get:
@@ -18,12 +18,12 @@ paths:
       description: Returns a single pet
       operationId: getPetById
       parameters:
-        - name: petId
-          in: path
-          description: ID of pet to return
+        - in: path
+          name: petId
           required: true
           schema:
             type: integer
+          description: ID of pet to return
       responses:
         '200':
           description: successful operation
