@@ -337,7 +337,13 @@ components:
             layout: 'BaseLayout',
             // layout: 'StandaloneLayout',
 
-            // 試行を許可するHTTPメソッド。
+            // Schemasセクションを非表示。
+            // defaultModelsExpandDepth: -1,
+
+            // 認証情報をブラウザに記憶。
+            // persistAuthorization: true,
+
+            // 試行（Try it outボタン）を許可するHTTPメソッド。空の配列を設定するとすべての操作の試行が無効になります。
             // supportedSubmitMethods: [],
             // supportedSubmitMethods: ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'],
           });
@@ -348,7 +354,7 @@ components:
     ```
 1. ブラウザで`index.html`を開くと、`Swagger UI`が呼び出されOpenAPI仕様書が表示されます。
 
-    ![sample-api.jpg](screencaps/sample-api.jpg)
+    ![sample.jpg](screencaps/sample.jpg)
 
     実際のサンプルはこちらで確認できます。  
     [https://takuya-motoshima.github.io/learn-open-api/](https://takuya-motoshima.github.io/learn-open-api/)
