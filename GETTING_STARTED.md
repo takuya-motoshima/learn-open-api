@@ -350,4 +350,6 @@ components:
 
     ![sample-api.jpg](screencaps/sample-api.jpg)
 
-    <!-- 実際のサンプルはこちらで確認できます。   -->
+    実際のサンプルはこちらで確認できます。  
+    [https://takuya-motoshima.github.io/learn-open-api/](https://takuya-motoshima.github.io/learn-open-api/)
+

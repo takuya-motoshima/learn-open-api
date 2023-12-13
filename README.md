@@ -21,6 +21,9 @@
 ## OpenAPIとは
 Web サービスを記述、生成、利用、視覚化するための機械可読インターフェイス定義言語の仕様。
 
+実際のサンプルはこちらで確認できます。  
+[https://takuya-motoshima.github.io/learn-open-api/](https://takuya-motoshima.github.io/learn-open-api/)
+
 ## 主機能
 - API仕様に沿ったドキュメントの作成
 - モックサーバーの作成
