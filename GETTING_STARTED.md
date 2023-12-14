@@ -337,11 +337,19 @@ components:
             layout: 'BaseLayout',
             // layout: 'StandaloneLayout',
 
-            // Schemasセクションを非表示。
-            // defaultModelsExpandDepth: -1,
+            // 初期表示時のモデルを展開する深さを制御。-1を設定するとモデルが完全に非表示になります。
+            defaultModelsExpandDepth: 3,
 
-            // 認証情報をブラウザに記憶。
-            // persistAuthorization: true,
+            // 初期表示でresponsesの詳細に記載されるレスポンスの表記方法を選択します。
+            // - model: モデルフィールドを表示します。
+            // - example: 値の例を表示します。
+            defaultModelRendering: 'model',
+
+            // 初期表示でresponsesの詳細に記載されるレスポンスの構造(Model)を表記する際に、どの階層まで折りたたまずに開いておくかを設定します。
+            defaultModelExpandDepth: 3,
+
+            // 認証情報のブラウザ記憶有無。trueに設定すると認証データをブラウザに保存し、ブラウザを閉じたり更新したりしても認証データは失われません。
+            persistAuthorization: true,
 
             // 試行（Try it outボタン）を許可するHTTPメソッド。空の配列を設定するとすべての操作の試行が無効になります。
             // supportedSubmitMethods: [],
