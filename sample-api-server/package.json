@@ -1,7 +1,6 @@
 {
   "name": "sample-api-server",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
     "start": "PORT=8080 nodemon ./bin/www",
     "//start": "node ./bin/www"

@@ -306,7 +306,7 @@ components:
     ```
 1. プロジェクトのルートにOpenAPI仕様書の`yaml`ファイルを作成し、APIの定義を記述します。ファイル名は`sample.yml`とします。
 1. `index.html`ファイルを作成し、次のコードを記述します。   
-    `SwaggerUIBundle`に渡されるオプション `url` を書き換えることで初期表示を切り替えることができます。
+    `SwaggerUIBundle`の `url` オプションを書き換えることで初期表示を切り替えることができます。
 
     ```html
     <!DOCTYPE html>
@@ -378,4 +378,14 @@ components:
 
     実際のサンプルはこちらで確認できます。  
     [https://takuya-motoshima.github.io/learn-open-api/](https://takuya-motoshima.github.io/learn-open-api/)
+1. 別の方法として、 [Redocly CLI](https://redocly.com/docs/cli/) というOpenAPI仕様書を静的HTMLとして出力するツールでOpenAPI仕様書を可視化する事も可能です。
+    `Redoc CLI` を用いたAPI仕様書の作成方法は次の通りです。
 
+    1. `Redoc CLI` をインストールします。
+        ```sh
+        npm install @redocly/cli
+        ```
+    1. OpenAPI仕様書をHTMLに出力します。
+        ```sh
+        npx redocly build-docs sample.yml -o redoc-sample.html
+        ```

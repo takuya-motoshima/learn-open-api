@@ -1,0 +1,10 @@
+{
+  "name": "learn-open-api",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx redocly build-docs docs/sample.yml -o docs/redoc-sample.html"
+  },
+  "devDependencies": {
+    "@redocly/cli": "^1.5.0"
+  }
+}
