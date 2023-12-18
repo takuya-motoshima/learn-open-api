@@ -351,6 +351,18 @@ components:
             // 認証情報のブラウザ記憶有無。trueに設定すると認証データをブラウザに保存し、ブラウザを閉じたり更新したりしても認証データは失われません。
             persistAuthorization: true,
 
+            // APIの表示をメソッド名の昇順に並び替える。
+            // operationsSorter: (a, b) => {
+            //   const methodsOrder = ['get', 'post', 'put', 'delete', 'patch', 'options', 'trace'];
+            //   let result = methodsOrder.indexOf(a.get('method')) - methodsOrder.indexOf(b.get('method'));
+            //   
+            //   // Or if you want to sort the methods alphabetically (delete, get, head, options, ...):
+            //   // var result = a.get('method').localeCompare(b.get('method'));
+            //   if (result === 0)
+            //     result = a.get('path').localeCompare(b.get('path'));
+            //   return result;
+            // },
+
             // 試行（Try it outボタン）を許可するHTTPメソッド。空の配列を設定するとすべての操作の試行が無効になります。
             // supportedSubmitMethods: [],
             // supportedSubmitMethods: ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'],
