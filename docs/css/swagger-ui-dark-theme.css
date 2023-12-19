@@ -1655,7 +1655,10 @@ html {
 .swagger-ui .info a,
 .swagger-ui .info a:hover,
 .swagger-ui .scopes h2 a {
-  color: #99bde6;
+  /* Fixed link colors to be brighter (2023/12/19) */
+  color: #009ef7;
+  text-decoration: none;
+  /* color: #99bde6; */
 }
 
 /* Dark Scrollbar */
