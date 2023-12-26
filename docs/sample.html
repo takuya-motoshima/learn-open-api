@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sampla API</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サンプルOpenAPI仕様書</title>
   <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-16x16.png" sizes="16x16">
-  <link rel="stylesheet" type="text/css" href="node_modules/swagger-ui-dist/swagger-ui.css">
-  <link rel="stylesheet" type="text/css" href="css/swagger-ui-dark-theme.css">
+  <link rel="stylesheet" href="node_modules/swagger-ui-dist/swagger-ui.css">
+  <link rel="stylesheet" href="css/swagger-ui-dark-theme.css">
+  <link rel="stylesheet" href="css/swagger-ui-custom.css">
 </head>
 <body>
   <div id="swagger-ui"></div>
   <script src="node_modules/swagger-ui-dist/swagger-ui-bundle.js"></script>
   <script src="node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
-  <script>
+  <script type="module">
+    import addApiListTitle from './js/addApiListTitle.js';
+    import sortApiOperations from './js/sortApiOperations.js';
+
     window.onload = function() {
       window.ui = SwaggerUIBundle({
         url: 'sample.yml',
@@ -42,20 +48,17 @@
         persistAuthorization: true,
 
         // APIの表示をメソッド名の昇順に並び替える。
-        // operationsSorter: (a, b) => {
-        //   const methodsOrder = ['get', 'post', 'put', 'delete', 'patch', 'options', 'trace'];
-        //   let result = methodsOrder.indexOf(a.get('method')) - methodsOrder.indexOf(b.get('method'));
-
-        //   // Or if you want to sort the methods alphabetically (delete, get, head, options, ...):
-        //   // var result = a.get('method').localeCompare(b.get('method'));
-        //   if (result === 0)
-        //     result = a.get('path').localeCompare(b.get('path'));
-        //   return result;
-        // },
+        operationsSorter: sortApiOperations,
 
         // 試行（Try it outボタン）を許可するHTTPメソッド。空の配列を設定するとすべての操作の試行が無効になります。
         // supportedSubmitMethods: [],
         // supportedSubmitMethods: ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'],
+
+        // Swagger UI描画完了イベント。
+        onComplete: () => {
+          // API一覧のコンテンツの直前にタイトル要素を追加。
+          addApiListTitle();
+        },
       });
     }
   </script>

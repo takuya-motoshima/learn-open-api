@@ -1,0 +1,48 @@
+/* yamlファイルのダウンロードリンク非表示。 */
+.swagger-ui .information-container .link {
+  display: none;
+}
+
+/* No linksアイコン非表示。 */
+.swagger-ui td.response-col_links,
+.swagger-ui .response-col_links i {
+  display: none;
+}
+
+/* infoセクション内の引用欄の左側に赤いボーダーを表示し装飾 */
+.swagger-ui .information-container blockquote {
+  border-left: 3px solid #d4123f;
+  padding-left: 15px;
+  margin-inline-start: 0;
+}
+
+/* bootstrapのpreのCSSと競合してAPIバージョンとOASバージョン要素に縦スクロールが表示されてしまう問題を解決 */
+.swagger-ui .info .title small pre {
+  overflow: visible;
+}
+
+/* bootstrapサイドバーレイアウトを適用するため、docs.cssで定義されている.bd-main要素のGridレイアウトを解除 */
+.bd-main {
+  display: block;
+}
+
+  /* bootstrapサイドバーレイアウトを使用する場合、Swagger UIの最大幅の制限を解除 */
+  .bd-main .swagger-ui .wrapper {
+    max-width: none;
+  }
+
+/* docs.cssで定義されているヘッダーの背景色を紫から黒に変更 */
+.bd-navbar {
+  background-color: #1f1f1f;
+}
+
+  .bd-navbar::after {
+    content: none;
+  }
+
+/* docs.cssで定義されているモバイルメニュー背景色を紫から黒に変更 */
+
+/* bootstrapサイドバーレイアウトを使用する場合、Swagger UIの最大幅の制限を解除 */
+.bd-navbar .offcanvas-lg {
+  background-color: #1f1f1f;
+}

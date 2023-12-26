@@ -17,6 +17,14 @@
 - OpenAPI仕様を書ける
 - OpenAPIの公式ドキュメントを参照できる
 
+今回作成したサンプルは以下で動作を確認できます。
+|URL|説明|
+|--|--|
+|[https://takuya-motoshima.github.io/learn-open-api/](https://takuya-motoshima.github.io/learn-open-api/)|索引|
+|[https://takuya-motoshima.github.io/learn-open-api/sample.html](https://takuya-motoshima.github.io/learn-open-api/sample.html)|Swagger UIで可視化したOpenAPI仕様書のサンプルです。|
+|[https://takuya-motoshima.github.io/learn-open-api/redoc-sample.html](https://takuya-motoshima.github.io/learn-open-api/redoc-sample.html)|ReDocで可視化したOpenAPI仕様書のサンプルです。|
+|[https://takuya-motoshima.github.io/learn-open-api/sidebar-sample.html](https://takuya-motoshima.github.io/learn-open-api/sidebar-sample.html)|Bootstrapを使用したサイドバーレイアウトのSwagger UIで可視化したOpenAPI仕様書のサンプルです。|
+
 ## OpenAPIのサンプル
 次のような仕様のAPIを考えます。
 1. IDを指定して、特定のペットの情報を取得
@@ -28,41 +36,37 @@
 ```yml
 openapi: 3.0.2
 info:
-  title: Pet API
+  title: サンプルOpenAPI仕様書
   version: '1.0.0'
 servers:
-  - url: https://dev.sample-server.com/v1
-    description: Development server
-  - url: https://stg.sample-server.com/v1
-    description: Staging server
   - url: https://api.sample-server.com/v1
-    description: Production server
+    description: 本番環境
+  - url: https://stg.sample-server.com/v1
+    description: テスト環境
 paths:
   /pets/{petId}:
     get:
       tags:
-        - pet
-      summary: Find pet by ID
-      description: Returns a single pet
-      operationId: getPetById
+        - pets
+      summary: ペット情報取得
+      description: id を指定して対象ペットの情報を1件取得します。
+      operationId: get-pet-by-id
       parameters:
         - in: path
           name: petId
           required: true
           schema:
             type: integer
-          description: ID of pet to return
+          description: 取得するペット情報のID
       responses:
         '200':
-          description: successful operation
+          description: ペット情報の取得が成功しました。
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
-        '400':
-          description: Invalid ID supplied
         '404':
-          description: Pet not found
+          description: 指定された id のペット情報が存在しません。
 components:
   schemas:
     Pet:
@@ -72,8 +76,11 @@ components:
       properties:
         id:
           type: integer
+          description: ペット情報ID
         name:
           type: string
+          description: ペットニックネーム
+      title: ペット情報
 ```
 
 サンプルのOpenAPI仕様の説明です。[]で括られた key はプレースホルダー、value は key の説明です。
@@ -312,8 +319,8 @@ components:
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Sampla API</title>
-      <link rel="stylesheet" type="text/css" href="node_modules/swagger-ui-dist/swagger-ui.css">
+      <title>サンプルOpenAPI仕様書</title>
+      <link rel="stylesheet" href="node_modules/swagger-ui-dist/swagger-ui.css">
       <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-16x16.png" sizes="16x16">
     </head>
@@ -352,16 +359,16 @@ components:
             persistAuthorization: true,
 
             // APIの表示をメソッド名の昇順に並び替える。
-            // operationsSorter: (a, b) => {
-            //   const methodsOrder = ['get', 'post', 'put', 'delete', 'patch', 'options', 'trace'];
-            //   let result = methodsOrder.indexOf(a.get('method')) - methodsOrder.indexOf(b.get('method'));
-            //   
-            //   // Or if you want to sort the methods alphabetically (delete, get, head, options, ...):
-            //   // var result = a.get('method').localeCompare(b.get('method'));
-            //   if (result === 0)
-            //     result = a.get('path').localeCompare(b.get('path'));
-            //   return result;
-            // },
+            operationsSorter: (a, b) => {
+              const methodsOrder = ['get', 'post', 'put', 'delete', 'patch', 'options', 'trace'];
+              let result = methodsOrder.indexOf(a.get('method')) - methodsOrder.indexOf(b.get('method'));
+              
+              // Or if you want to sort the methods alphabetically (delete, get, head, options, ...):
+              // var result = a.get('method').localeCompare(b.get('method'));
+              if (result === 0)
+                result = a.get('path').localeCompare(b.get('path'));
+              return result;
+            },
 
             // 試行（Try it outボタン）を許可するHTTPメソッド。空の配列を設定するとすべての操作の試行が無効になります。
             // supportedSubmitMethods: [],

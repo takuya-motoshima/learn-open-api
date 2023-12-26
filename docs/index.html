@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenAPI仕様書サンプル索引</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenAPIサンプル索引</title>
   <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-16x16.png" sizes="16x16">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link href="css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/docs.css">
 </head>
 <body>
   <!--begin::SVG Symbols-->
@@ -98,7 +98,7 @@
     <div class="container-xxl bd-gutter pt-md-1 pb-md-4">
       <div class="row">
         <div class="col-xl-12">
-          <h1 class="bd-title mt-0">OpenAPI仕様書サンプル索引</h1>
+          <h1 class="bd-title mt-0">OpenAPIサンプル索引</h1>
           <p class="bd-lead">OpenAPI仕様書のサンプルをリンクから参照できます。</p>
           <div class="d-flex flex-column flex-md-row gap-3">
             <!-- <a href="https://github.com/ShowcaseTV/pam-documents" class="btn btn-lg bd-btn-lg btn-bd-primary d-flex align-items-center justify-content-center fw-semibold">
@@ -136,9 +136,9 @@
             <!--begin::Details-->
             <div>
               <h3 class="h5 mb-1">
-                <a class="d-block link-offset-1" href="sample.html" rel="noopener">サンプルAPI仕様書</a>
+                <a class="d-block link-offset-1" href="sample.html" rel="noopener">Swagger UIで可視化したOpenAPI仕様書</a>
               </h3>
-              <p class="text-body-secondary">サンプルAPIの仕様書です。</p>
+              <p class="text-body-secondary">Swagger UIで可視化したOpenAPI仕様書のサンプルです。</p>
             </div>
             <!--end::Details-->
           </div>
@@ -153,9 +153,26 @@
             <!--begin::Details-->
             <div>
               <h3 class="h5 mb-1">
-                <a class="d-block link-offset-1" href="redoc-sample.html" rel="noopener">サンプルAPIのReDocスタイル仕様書</a>
+                <a class="d-block link-offset-1" href="redoc-sample.html" rel="noopener">ReDocで可視化したOpenAPI仕様書</a>
               </h3>
-              <p class="text-body-secondary">サンプルAPIのReDocスタイル仕様書です。</p>
+              <p class="text-body-secondary">ReDocで可視化したOpenAPI仕様書のサンプルです。</p>
+            </div>
+            <!--end::Details-->
+          </div>
+          <!--end::Col-->
+          <!--begin::Col-->
+          <div class="col-md-6 col-lg-4 mb-3 d-flex gap-3">
+            <!--begin::Symbol-->
+            <svg class="bi fs-5 flex-shrink-0 mt-1">
+              <use xlink:href="#box-seam"></use>
+            </svg>
+            <!--end::Symbol-->
+            <!--begin::Details-->
+            <div>
+              <h3 class="h5 mb-1">
+                <a class="d-block link-offset-1" href="sidebar-sample.html" rel="noopener">サイドバーレイアウトOpenAPI仕様書</a>
+              </h3>
+              <p class="text-body-secondary">Bootstrapを使用したサイドバーレイアウトのSwagger UIで可視化したOpenAPI仕様書のサンプルです。</p>
             </div>
             <!--end::Details-->
           </div>
@@ -168,6 +185,5 @@
     <!--end::Container-->
   </main>
   <!--end::Main-->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> -->
 </body>
 </html>

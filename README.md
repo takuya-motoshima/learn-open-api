@@ -63,7 +63,7 @@ paths:
 
 ```yml
 info:
-  title: Sample API
+  title: サンプルOpenAPI仕様書
   description: A short description of API.
   termsOfService: http://example.com/terms/
   contact:
@@ -90,12 +90,10 @@ info:
 
 ```yml
 servers:
-  - url: https://dev.sample-server.com/v1
-    description: Development server
-  - url: https://stg.sample-server.com/v1
-    description: Staging server
   - url: https://api.sample-server.com/v1
-    description: Production server
+    description: 本番環境
+  - url: https://stg.sample-server.com/v1
+    description: テスト環境
 ```
 
 |項目|必須|説明|
