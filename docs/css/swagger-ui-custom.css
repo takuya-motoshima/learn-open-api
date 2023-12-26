@@ -31,6 +31,23 @@
     max-width: none;
   }
 
+  /* bootstrapサイドバーレイアウトを使用する場合、bootstrapによって縮小された見出しタグの上下余白を拡大 */
+  .bd-main .swagger-ui .h1,
+  .bd-main .swagger-ui .h2,
+  .bd-main .swagger-ui .h3,
+  .bd-main .swagger-ui .h4,
+  .bd-main .swagger-ui .h5,
+  .bd-main .swagger-ui .h6,
+  .bd-main .swagger-ui h1,
+  .bd-main .swagger-ui h2,
+  .bd-main .swagger-ui h3,
+  .bd-main .swagger-ui h4,
+  .bd-main .swagger-ui h5,
+  .bd-main .swagger-ui h6 {
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+  }
+
 /* docs.cssで定義されているヘッダーの背景色を紫から黒に変更 */
 .bd-navbar {
   background-color: #1f1f1f;
