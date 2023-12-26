@@ -97,8 +97,7 @@
   </svg>
   <!--end::SVG Symbols-->
   <!--begin::Header-->
-  <header class="navbar navbar-expand-lg bd-navbar">
-  <!-- <header class="navbar navbar-expand-lg bd-navbar sticky-top"> -->
+  <header class="navbar navbar-expand-lg bd-navbar sticky-top" id="bdHeader">
     <nav class="container-fluid bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
     <!-- <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation"> -->
       <div class="bd-navbar-toggle">
@@ -238,6 +237,7 @@
     import addApiListTitle from './js/addApiListTitle.js';
     import addApiSideMenu from './js/addApiSideMenu.js';
     import sortApiOperations from './js/sortApiOperations.js';
+    import setSideMenuEvent from './js/setSideMenuEvent.js';
 
     window.onload = function() {
       window.ui = SwaggerUIBundle({
@@ -282,6 +282,9 @@
 
           // サイドバーにAPIメニューを追加。
           addApiSideMenu();
+
+          // サイドバーメニューのクリックイベント設定。
+          setSideMenuEvent();
         },
       });
     }
