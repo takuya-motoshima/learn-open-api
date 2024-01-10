@@ -461,19 +461,23 @@
     --bd-callout-code-color: #e685b5;
     --bd-pre-bg: #1b1f22
 }
+
+/* ヘッダーの背景色を紫から黒に変更 */
 .bd-navbar{
     padding:.75rem 0;
-    background-color:transparent;
+    background-color: #1f1f1f;
+    /* background-color:transparent; */
     box-shadow:0 0.5rem 1rem rgba(0,0,0,0.15),inset 0 -1px 0 rgba(255,255,255,0.15)
 }
-.bd-navbar::after{
+/* .bd-navbar::after{
     position:absolute;
     inset:0;
     z-index:-1;
     display:block;
     content:"";
     background-image:linear-gradient(rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.95))
-}
+} */
+
 @media (max-width: 991.98px){
     .bd-navbar .bd-navbar-toggle{
         width:4.25rem
@@ -522,8 +526,10 @@
     display:inline-block;
     vertical-align:-.125rem
 }
+/* モバイルメニュー背景色を紫から黒に変更 */
 .bd-navbar .offcanvas-lg{
-    background-color:var(--bd-violet-bg);
+    background-color: #1f1f1f;
+    /* background-color:var(--bd-violet-bg); */
     border-left:0
 }
 @media (max-width: 991.98px){

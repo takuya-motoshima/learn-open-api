@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html data-bs-theme="dark">
+<html data-bs-theme="light">
+<!-- <html data-bs-theme="dark"> -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +10,7 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/docs.css">
   <link rel="stylesheet" href="node_modules/swagger-ui-dist/swagger-ui.css">
-  <link rel="stylesheet" href="css/swagger-ui-dark-theme.css">
+  <!-- <link rel="stylesheet" href="css/swagger-ui-dark-theme.css"> --><!-- ダークテーマの場合は読み込む -->
   <link rel="stylesheet" href="css/swagger-ui-custom.css">
 </head>
 <body>
@@ -197,19 +198,13 @@
           <nav class="bd-links w-100" id="bd-docs-nav" aria-label="Docs navigation">
             <ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
               <li class="bd-links-group py-2">
-                <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
-                  <svg class="bi me-2" style="color: var(--bs-indigo);" aria-hidden="true"><use xlink:href="#book-half"></use></svg>
-                  はじめに
-                </strong>
+                <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">はじめに</strong>
                 <ul class="list-unstyled fw-normal pb-2 small">
                   <li><a href="#about-api" class="bd-links-link d-inline-block rounded" aria-current="page">APIについて</a></li>
                 </ul>
               </li>
               <li class="bd-links-group py-2">
-                <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
-                  <svg class="bi me-2" style="color: var(--bs-pink);" aria-hidden="true"><use xlink:href="#palette2"></use></svg>
-                  API一覧
-                </strong>
+                <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">API一覧</strong>
                 <ul id="api-menu" class="list-unstyled fw-normal pb-2 small"></ul>
               </li>
               <!-- <li class="bd-links-span-all mt-1 mb-3 mx-4 border-top"></li>

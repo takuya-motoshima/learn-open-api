@@ -5,6 +5,12 @@ export default () => {
   // ヘッダ要素取得。
   const header = document.getElementById('bdHeader');
   
+  // サイドバー要素。
+  const sidebar = document.getElementById('bdSidebar');
+
+  // サイドバーのオフキャンバスインスタンス。
+  const sidebarOffcanvas = new bootstrap.Offcanvas(sidebar);
+
   // メニューのリンク要素を取得しクリックイベントを設定。
   for (let link of document.querySelectorAll('#bd-docs-nav a[href^="#"]')) {
     link.addEventListener('click', evnt => {
@@ -50,6 +56,10 @@ export default () => {
       // リンク先の要素へスクロール。
       window.scrollTo({top, behavior: 'smooth'});
       // scrollTarget.scrollIntoView({behavior: 'smooth', block: 'start'});
+
+      // サイドバーがオフキャンバス表示の場合、サイドバーを閉じる。
+      if (sidebar.classList.contains('show'))
+        sidebarOffcanvas.hide();
     });
   }
 }

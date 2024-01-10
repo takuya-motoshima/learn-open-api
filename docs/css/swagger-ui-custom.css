@@ -48,18 +48,12 @@
     margin-bottom: 0.83em;
   }
 
-/* docs.cssで定義されているヘッダーの背景色を紫から黒に変更 */
-.bd-navbar {
-  background-color: #1f1f1f;
+/* serversセクション非表示 */
+/* .swagger-ui .scheme-container {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-  .bd-navbar::after {
-    content: none;
-  }
-
-/* docs.cssで定義されているモバイルメニュー背景色を紫から黒に変更 */
-
-/* bootstrapサイドバーレイアウトを使用する場合、Swagger UIの最大幅の制限を解除 */
-.bd-navbar .offcanvas-lg {
-  background-color: #1f1f1f;
-}
+  .swagger-ui .scheme-container .schemes-server-container {
+    display: none !important;
+  } */
