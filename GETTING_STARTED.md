@@ -36,7 +36,7 @@
 ```yml
 openapi: 3.0.2
 info:
-  title: サンプルOpenAPI仕様書
+  title: サンプルAPI
   version: '1.0.0'
 servers:
   - url: https://api.sample-server.com/v1
@@ -319,7 +319,7 @@ components:
     <!DOCTYPE html>
     <html>
     <head>
-      <title>サンプルOpenAPI仕様書</title>
+      <title>サンプルAPI</title>
       <link rel="stylesheet" href="node_modules/swagger-ui-dist/swagger-ui.css">
       <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-32x32.png" sizes="32x32">
       <link rel="icon" type="image/png" href="node_modules/swagger-ui-dist/favicon-16x16.png" sizes="16x16">

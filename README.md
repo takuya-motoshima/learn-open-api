@@ -63,7 +63,7 @@ paths:
 
 ```yml
 info:
-  title: サンプルOpenAPI仕様書
+  title: サンプルAPI
   description: A short description of API.
   termsOfService: http://example.com/terms/
   contact:

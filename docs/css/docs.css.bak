@@ -611,8 +611,17 @@
 
 .bd-navbar {
   padding: .75rem 0;
-  background-color: var(--bs-body-bg);
+  background-color: transparent;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15)
+}
+
+.bd-navbar::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  content: "";
+  background-image: linear-gradient(rgba(var(--bd-violet-rgb), 1), rgba(var(--bd-violet-rgb), 0.95))
 }
 
 @media (max-width: 991.98px) {
@@ -641,6 +650,7 @@
 }
 
 .bd-navbar .navbar-brand {
+  color: #fff;
   transition: transform 0.2s ease-in-out
 }
 
@@ -658,11 +668,20 @@
 .bd-navbar .nav-link {
   padding-right: .25rem;
   padding-left: .25rem;
+  color: rgba(255, 255, 255, 0.85)
+}
+
+.bd-navbar .navbar-toggler:hover,
+.bd-navbar .navbar-toggler:focus,
+.bd-navbar .nav-link:hover,
+.bd-navbar .nav-link:focus {
+  color: #fff
 }
 
 .bd-navbar .navbar-toggler.active,
 .bd-navbar .nav-link.active {
   font-weight: 600;
+  color: #fff
 }
 
 .bd-navbar .navbar-nav-svg {
@@ -671,6 +690,7 @@
 }
 
 .bd-navbar .offcanvas-lg {
+  background-color: var(--bd-violet-bg);
   border-left: 0
 }
 

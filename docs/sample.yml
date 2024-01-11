@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: サンプルOpenAPI仕様書
+  title: サンプルAPI
   description: |
     <h2 id="introduction">はじめに</h2>
     <h3 id="about-api">APIについて</h2>
